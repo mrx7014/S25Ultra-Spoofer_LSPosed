@@ -1,9 +1,9 @@
-name: Build S25Ultra-Spoofer_LSPosed APK
+name: Build S25Ultra Spoofer APK
 
 on:
   push:
     tags:
-      - 'v*'  # Trigger only when a tag starting with 'v' is pushed (e.g., v1.0.0)
+      - 'v*'
   workflow_dispatch:
     inputs:
       tag_name:
@@ -16,15 +16,15 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write  # Required to create releases and upload assets
-      packages: write  # Required if you're working with packages
-      actions: read    # Required to read workflow details
+      contents: write
+      packages: write
+      actions: read
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetch all history for tags
+          fetch-depth: 0
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
